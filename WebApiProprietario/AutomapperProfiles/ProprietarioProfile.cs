@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApiProprietario.Domain;
 using WebApiProprietario.Resources.ProprietarioResource;
 
 namespace WebApiProprietario.AutomapperProfiles

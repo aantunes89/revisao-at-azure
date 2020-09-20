@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using WebApiProprietario.Domain;
 using WebApiProprietario.Resources.ProprietarioResource;
 
 namespace WebApiProprietario.AutomapperProfiles

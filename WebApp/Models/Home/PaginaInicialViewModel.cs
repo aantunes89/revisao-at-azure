@@ -6,5 +6,6 @@ namespace WebApp.Models.Home
         public int QuantidadeDeCarros { get; set; }
         public int QuantidadeDeFabricantes { get; set; }
         public int QuantidadeDeProprietarios { get; set; }
+        public int QuantidadeDePessoas { get; set; }
     }
 }

@@ -104,7 +104,7 @@ namespace WebApp.Controllers
         private string UploadFotoProprietario(IFormFile foto)
         {
             var reader = foto.OpenReadStream();
-            var cloudStorageAccount = CloudStorageAccount.Parse(@"DefaultEndpointsProtocol=https;AccountName=revisaoazure;AccountKey=pIRWbBZIntC3YZ+0PXpNNb9DlHxyYUGA039hFx1TePl0PmoK+OKwaRs20fXdSrKUClsfDRg7onNizE/nTqqnzQ==;EndpointSuffix=core.windows.net");
+            var cloudStorageAccount = CloudStorageAccount.Parse(@"");
             var blobClient = cloudStorageAccount.CreateCloudBlobClient();
             var container = blobClient.GetContainerReference("fotos-proprietarios");
             container.CreateIfNotExists();

@@ -1,0 +1,63 @@
+﻿@model WebApp.Models.Pessoa.ListarFilhosViewModel
+
+@{
+    ViewData["Title"] = "Filhos";
+}
+
+<h1>Filhos</h1>
+
+<form action="/pessoa/filhos" method="post">
+    <input type="hidden" name="pessoaId" value="@Model.Pessoa.Id" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Filho?
+                </th>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Data de nascimento
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Pessoas)
+            {
+                <tr>
+                    <td>
+                        @if (Model.Filhos.Any(x => x.Id == item.Id))
+                        {
+                            <input type="checkbox" name="FilhoIds[]" value="@item.Id" checked />
+                        }
+                        else
+                        {
+                            <input type="checkbox" name="FilhoIds[]" value="@item.Id" />
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataDeNascimento)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
